@@ -144,52 +144,74 @@
     </div>
 
     <!-- Accordion  -->
-    <div class="px-3 md:px-12 lg:px-12 xl:px-24" >
+    <div class="px-3 md:px-12 lg:px-12 xl:px-24">
         <div class="bg-white p-6 w-full max-w-md">
-            <!-- Accordion Item 1 (Open by default) -->
-            <div x-data="{ open: true }" class="mb-4" x-cloak>
-              <button @click="open = !open" class="flex items-center w-full text-left">
-                <div class="w-7 h-7 flex items-center justify-center bg-black text-white mr-3 font-bold">
-                    <i :class="open ? 'fas fa-minus' : 'fas fa-plus'"></i>
-                </div>
-                <span class="font-bold text-lg">PAIEMENT SÉCURISÉ</span>
-              </button>
-              <div x-show="open" x-transition.duration.300ms class="transition-all duration-300 ease-in-out mt-2 text-sm text-gray-700 pl-10">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud ex
+          <!-- Accordion Item 1 -->
+          <div x-data="{ open: true }" class="mb-4" x-cloak>
+            <button @click="open = !open" class="flex items-center w-full text-left">
+              <div class="w-7 h-7 flex items-center justify-center bg-black text-white mr-3 font-bold">
+                <i :class="open ? 'fas fa-minus' : 'fas fa-plus'"></i>
               </div>
+              <span class="font-bold text-lg">PAIEMENT SÉCURISÉ</span>
+            </button>
+            <div x-show="open"
+                x-transition:enter="transition-all ease-out duration-500 transform"
+                x-transition:enter-start="opacity-0 -translate-y-2 max-h-0"
+                x-transition:enter-end="opacity-100 translate-y-0 max-h-screen"
+                x-transition:leave="transition-all ease-in duration-400 transform"
+                x-transition:leave-start="opacity-100 translate-y-0 max-h-screen"
+                x-transition:leave-end="opacity-0 -translate-y-2 max-h-0"
+                class="overflow-hidden mt-2 text-sm text-gray-700 pl-10">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </div>
-        
-            <!-- Accordion Item 2 -->
-            <div x-data="{ open: false }" class="mb-4" x-cloak>
-              <button @click="open = !open" class="flex items-center w-full text-left">
-                <div class="w-7 h-7 flex items-center justify-center bg-black text-white mr-3 font-bold">
-                    <i :class="open ? 'fas fa-minus' : 'fas fa-plus'"></i>
-                </div>
-                <span class="font-bold text-lg">GARANTIE</span>
-              </button>
-              <div x-show="open" class="mt-2 text-sm text-gray-700 pl-10">
-                Garantie details go here.
-              </div>
-            </div>
-        
-            <!-- Accordion Item 3 -->
-            <div x-data="{ open: false }" class="mb-4" x-cloak>
-              <button @click="open = !open" class="flex items-center w-full text-left">
-                <div class="w-7 h-7 flex items-center justify-center bg-black text-white mr-3 font-bold">
-                    <i :class="open ? 'fas fa-minus' : 'fas fa-plus'"></i>
-                </div>
-                <span class="font-bold text-lg">SUPPORT</span>
-              </button>
-              <div x-show="open" class="mt-2 text-sm text-gray-700 pl-10">
-                Support information goes here.
-              </div>
-            </div>
-        
+       
           </div>
-        
-          <!-- Alpine.js for accordion toggling -->
-          <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    </div>
+      
+          <!-- Accordion Item 2 -->
+          <div x-data="{ open: false }" class="mb-4" x-cloak>
+            <button @click="open = !open" class="flex items-center w-full text-left">
+              <div class="w-7 h-7 flex items-center justify-center bg-black text-white mr-3 font-bold">
+                <i :class="open ? 'fas fa-minus' : 'fas fa-plus'"></i>
+              </div>
+              <span class="font-bold text-lg">GARANTIE</span>
+            </button>
+            <div x-show="open"
+                x-transition:enter="transition-all ease-out duration-500 transform"
+                x-transition:enter-start="opacity-0 -translate-y-2 max-h-0"
+                x-transition:enter-end="opacity-100 translate-y-0 max-h-screen"
+                x-transition:leave="transition-all ease-in duration-400 transform"
+                x-transition:leave-start="opacity-100 translate-y-0 max-h-screen"
+                x-transition:leave-end="opacity-0 -translate-y-2 max-h-0"
+                class="overflow-hidden mt-2 text-sm text-gray-700 pl-10">
+                Garantie details go here.
+            </div>
+          </div>
+      
+          <!-- Accordion Item 3 -->
+          <div x-data="{ open: false }" class="mb-4" x-cloak>
+            <button @click="open = !open" class="flex items-center w-full text-left">
+              <div class="w-7 h-7 flex items-center justify-center bg-black text-white mr-3 font-bold">
+                <i :class="open ? 'fas fa-minus' : 'fas fa-plus'"></i>
+              </div>
+              <span class="font-bold text-lg">SUPPORT</span>
+            </button>
+            <div x-show="open"
+                x-transition:enter="transition-all ease-out duration-500 transform"
+                x-transition:enter-start="opacity-0 -translate-y-2 max-h-0"
+                x-transition:enter-end="opacity-100 translate-y-0 max-h-screen"
+                x-transition:leave="transition-all ease-in duration-400 transform"
+                x-transition:leave-start="opacity-100 translate-y-0 max-h-screen"
+                x-transition:leave-end="opacity-0 -translate-y-2 max-h-0"
+                class="overflow-hidden mt-2 text-sm text-gray-700 pl-10">
+                Support information goes here.
+            </div>
+          </div>
+        </div>
+      
+        <!-- Alpine.js CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+      </div>
+      
 
     <!-- Image section  -->
     <div class="px-3 md:px-12 lg:px-12 xl:px-24 pb-5">
