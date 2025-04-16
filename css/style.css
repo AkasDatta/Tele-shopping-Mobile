@@ -1,12 +1,13 @@
-/* CSS Code */
-.swiper-wrapper {
-    width: 100%;
-    height: max-content !important;
-    padding-bottom: 64px !important;
-    -webkit-transition-timing-function: linear !important;
-    transition-timing-function: linear !important;
-    position: relative;
-    }
-    .swiper-pagination-bullet {
-    background: #4f46e5;
-    }
+.swiper-pagination-bullet {
+    background-color: #ccc;
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+    border-radius: 9999px;
+    margin: 0 4px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #000;
+    opacity: 1;
+  }
