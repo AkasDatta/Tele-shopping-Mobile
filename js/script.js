@@ -189,3 +189,34 @@ function toggleAccordion(index) {
 window.addEventListener('DOMContentLoaded', () => {
   toggleAccordion(1);
 });
+
+
+// 7th 
+// Button link modified 
+document.addEventListener("DOMContentLoaded", function () {
+  let selectedLink = "";
+  const options = document.querySelectorAll('#options-container a');
+  const button = document.querySelector('#options-container').nextElementSibling; // Targets the button right after options
+
+  options.forEach(option => {
+    option.addEventListener('click', function (e) {
+      e.preventDefault(); // Stop default link behavior
+      selectedLink = this.href;
+
+      // Optional: scroll to the button
+      button.scrollIntoView({ behavior: 'smooth' });
+
+      // Optional: add active state styling
+      options.forEach(opt => opt.classList.remove('border-[#D35400]', 'bg-[#FF71621F]', 'border-4'));
+      this.classList.add('border-[#D35400]', 'bg-[#FF71621F]', 'border-4');
+    });
+  });
+
+  button.addEventListener('click', function () {
+    if (selectedLink) {
+      window.location.href = selectedLink;
+    } else {
+      alert("Veuillez sélectionner une option avant de continuer.");
+    }
+  });
+});
