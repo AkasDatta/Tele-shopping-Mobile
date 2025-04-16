@@ -61,42 +61,41 @@ document.addEventListener("DOMContentLoaded", function () {
          return;
      }
 
-     // Start Timer (Update every minute)
-     const startTimer = setInterval(function() {
-         if (timeRemaining <= 0) {
-             clearInterval(startTimer); // Stop when time is up
-             console.log('Timer has finished.');
-             return;
-         }
+      // Start Timer (Update every minute)
+      const startTimer = setInterval(function() {
+        if (timeRemaining <= 0) {
+            clearInterval(startTimer); // Stop when time is up
+            console.log('Timer has finished.');
+            return;
+        }
 
-         // Update the timer (minutes:00 format, seconds always show 00)
-         let minutes = timeRemaining;
-         timerElement.textContent = `${minutes}:00 min avant la fin de votre offre`;
+        // Decrease time by 1 minute **first**
+        timeRemaining -= 1;
 
-         // Debugging: Log the time remaining
-         console.log(`Time remaining: ${minutes}:00`);
+        // Update the timer (minutes:00 format)
+        timerElement.textContent = `${timeRemaining}`;
 
-         // Determine the progress bar decrement based on the remaining time
-         let decreaseAmount = 0;
-         if (timeRemaining > 17) {  // First 5 minutes (22-17 minutes)
-             decreaseAmount = 4;
-         } else if (timeRemaining > 13) { // Next 4 minutes (17-13 minutes)
-             decreaseAmount = 3;
-         } else if (timeRemaining > 5) {  // Next 8 minutes (13-5 minutes)
-             decreaseAmount = 2;
-         } else {  // Last 5 minutes
-             decreaseAmount = 1;
-         }
+        // Debugging: Log the time remaining
+        console.log(`Time remaining: ${timeRemaining}:00`);
 
-         // Update progress bar
-         currentPercentage -= decreaseAmount;
-         currentPercentage = currentPercentage < 0 ? 0 : currentPercentage; // Prevent negative values
-         progressBar.style.width = `${currentPercentage}%`;
-         stockPercent.textContent = `${currentPercentage}% du stock`;
+        // Determine the progress bar decrement based on the remaining time
+        let decreaseAmount = 0;
+        if (timeRemaining > 17) {
+            decreaseAmount = 4;
+        } else if (timeRemaining > 13) {
+            decreaseAmount = 3;
+        } else if (timeRemaining > 7) {
+            decreaseAmount = 2;
+        } else {
+            decreaseAmount = 1;
+        }
 
-         // Decrease time by 1 minute
-         timeRemaining -= 1;
-     }, 60000); // Update every minute (60000ms)
+        // Update progress bar
+        currentPercentage -= decreaseAmount;
+        currentPercentage = currentPercentage < 0 ? 0 : currentPercentage;
+        progressBar.style.width = `${currentPercentage}%`;
+        stockPercent.textContent = `${currentPercentage}% du stock`;
+      }, 60000); // Update every 600ms (should be 60000 for real minute)
  });
 
 
