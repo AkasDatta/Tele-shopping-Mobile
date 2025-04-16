@@ -174,72 +174,181 @@
     <!-- Accordion  -->
     <div class="px-3 md:px-12 lg:px-12 xl:px-24">
         <div class="bg-white p-6 w-full max-w-md">
+      
           <!-- Accordion Item 1 -->
-          <div x-data="{ open: true }" class="mb-4" x-cloak>
-            <button @click="open = !open" class="flex items-center w-full text-left">
-              <div class="w-7 h-7 flex items-center justify-center bg-black text-white mr-3 font-bold">
-                <i :class="open ? 'fas fa-minus' : 'fas fa-plus'"></i>
-              </div>
-              <span class="font-bold text-lg">PAIEMENT SÉCURISÉ</span>
+          <div class="">
+            <button onclick="toggleAccordion(1)" class="w-full flex items-center py-3 gap-3 text-black">
+                <span id="icon-1" class="text-white bg-black p-1 transition-transform duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                      <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+                    </svg>
+                </span>
+              <span class="font-bold text-md">PAIEMENT SÉCURISÉ</span>
             </button>
-            <div x-show="open"
-                x-transition:enter="transition-all ease-out duration-500 transform"
-                x-transition:enter-start="opacity-0 -translate-y-2 max-h-0"
-                x-transition:enter-end="opacity-100 translate-y-0 max-h-screen"
-                x-transition:leave="transition-all ease-in duration-400 transform"
-                x-transition:leave-start="opacity-100 translate-y-0 max-h-screen"
-                x-transition:leave-end="opacity-0 -translate-y-2 max-h-0"
-                class="overflow-hidden mt-2 text-sm text-gray-700 pl-10">
+            <div id="content-1" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <div class="pb-5 pl-9 text-md text-gray-900">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </div>
             </div>
-       
           </div>
       
           <!-- Accordion Item 2 -->
-          <div x-data="{ open: false }" class="mb-4" x-cloak>
-            <button @click="open = !open" class="flex items-center w-full text-left">
-              <div class="w-7 h-7 flex items-center justify-center bg-black text-white mr-3 font-bold">
-                <i :class="open ? 'fas fa-minus' : 'fas fa-plus'"></i>
-              </div>
-              <span class="font-bold text-lg">GARANTIE</span>
+          <div class="">
+            <button onclick="toggleAccordion(2)" class="w-full flex items-center py-3 gap-3 text-black">
+                <span id="icon-2" class="text-white bg-black p-1 transition-transform duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                      <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+                    </svg>
+                </span>
+              <span class="font-bold text-md">GARANTIE</span>
             </button>
-            <div x-show="open"
-                x-transition:enter="transition-all ease-out duration-500 transform"
-                x-transition:enter-start="opacity-0 -translate-y-2 max-h-0"
-                x-transition:enter-end="opacity-100 translate-y-0 max-h-screen"
-                x-transition:leave="transition-all ease-in duration-400 transform"
-                x-transition:leave-start="opacity-100 translate-y-0 max-h-screen"
-                x-transition:leave-end="opacity-0 -translate-y-2 max-h-0"
-                class="overflow-hidden mt-2 text-sm text-gray-700 pl-10">
+            <div id="content-2" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <div class="pb-5 pl-9 text-md text-gray-900">
                 Garantie details go here.
+              </div>
             </div>
           </div>
       
           <!-- Accordion Item 3 -->
-          <div x-data="{ open: false }" class="mb-4" x-cloak>
-            <button @click="open = !open" class="flex items-center w-full text-left">
-              <div class="w-7 h-7 flex items-center justify-center bg-black text-white mr-3 font-bold">
-                <i :class="open ? 'fas fa-minus' : 'fas fa-plus'"></i>
-              </div>
-              <span class="font-bold text-lg">SUPPORT</span>
+          <div class="">
+            <button onclick="toggleAccordion(3)" class="w-full flex items-center py-3 gap-3 text-black">
+            <span id="icon-3" class="text-white bg-black p-1 transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                  <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+                </svg>
+              </span>
+              <span class="font-bold text-md">SUPPORT</span>
             </button>
-            <div x-show="open"
-                x-transition:enter="transition-all ease-out duration-500 transform"
-                x-transition:enter-start="opacity-0 -translate-y-2 max-h-0"
-                x-transition:enter-end="opacity-100 translate-y-0 max-h-screen"
-                x-transition:leave="transition-all ease-in duration-400 transform"
-                x-transition:leave-start="opacity-100 translate-y-0 max-h-screen"
-                x-transition:leave-end="opacity-0 -translate-y-2 max-h-0"
-                class="overflow-hidden mt-2 text-sm text-gray-700 pl-10">
+            <div id="content-3" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+              <div class="pb-5 pl-9 text-md text-gray-900">
                 Support information goes here.
+              </div>
             </div>
           </div>
+      
         </div>
+      </div>
       
-        <!-- Alpine.js CDN -->
-        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+      <script>
+        function toggleAccordion(index) {
+          const content = document.getElementById(`content-${index}`);
+          const icon = document.getElementById(`icon-${index}`);
+      
+          const minusSVG = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+              <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
+            </svg>
+          `;
+      
+          const plusSVG = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+              <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+            </svg>
+          `;
+      
+          const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+      
+          // Close all other accordions
+          for (let i = 1; i <= 3; i++) {
+            const c = document.getElementById(`content-${i}`);
+            const ic = document.getElementById(`icon-${i}`);
+            if (c && ic) {
+              c.style.maxHeight = '0';
+              ic.innerHTML = plusSVG;
+            }
+          }
+      
+          if (!isOpen) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            icon.innerHTML = minusSVG;
+          }
+        }
+      </script>
+      
+      
+
+    <div>
+        <!-- Accordion Item 1 -->
+        <div class="">
+            <button onclick="toggleAccordion(1)" class="w-full flex justify-between items-center py-5 text-black">
+            <span>What is Material Tailwind?</span>
+            <span id="icon-1" class="text-black transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+                </svg>
+            </span>
+            </button>
+            <div id="content-1" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="pb-5 text-sm text-slate-500">
+                Material Tailwind is a framework that enhances Tailwind CSS with additional styles and components.
+            </div>
+            </div>
+        </div>
+        
+        <!-- Accordion Item 2 -->
+        <div class="border-b border-slate-200">
+            <button onclick="toggleAccordion(2)" class="w-full flex justify-between items-center py-5 text-black">
+            <span>How to use Material Tailwind?</span>
+            <span id="icon-2" class="text-black transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+                </svg>
+            </span>
+            </button>
+            <div id="content-2" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="pb-5 text-sm text-slate-500">
+                You can use Material Tailwind by importing its components into your Tailwind CSS project.
+            </div>
+            </div>
+        </div>
+        
+        <!-- Accordion Item 3 -->
+        <div class="border-b border-slate-200">
+            <button onclick="toggleAccordion(3)" class="w-full flex justify-between items-center py-5 text-black">
+            <span>What can I do with Material Tailwind?</span>
+            <span id="icon-3" class="text-black transition-transform duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+                </svg>
+            </span>
+            </button>
+            <div id="content-3" class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+            <div class="pb-5 text-sm text-slate-500">
+                Material Tailwind allows you to quickly build modern, responsive websites with a focus on design.
+            </div>
+            </div>
+        </div>
+        
+        <script>
+            function toggleAccordion(index) {
+            const content = document.getElementById(`content-${index}`);
+            const icon = document.getElementById(`icon-${index}`);
+        
+            // SVG for Minus icon
+            const minusSVG = `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
+                </svg>
+            `;
+        
+            // SVG for Plus icon
+            const plusSVG = `
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+                <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
+                </svg>
+            `;
+        
+            // Toggle the content's max-height for smooth opening and closing
+            if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                content.style.maxHeight = '0';
+                icon.innerHTML = plusSVG;
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                icon.innerHTML = minusSVG;
+            }
+            }
+        </script>
     </div>
-      
 
     <!-- Image section  -->
     <div class="px-3 md:px-12 lg:px-12 xl:px-24 pb-5">
