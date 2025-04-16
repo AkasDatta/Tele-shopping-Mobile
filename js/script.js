@@ -100,7 +100,21 @@ document.addEventListener("DOMContentLoaded", function () {
  });
 
 
-// 3rd 
+
+//  3rd 
+// Focus button 
+const options = document.querySelectorAll('.option');
+          
+options.forEach(option => {
+  option.addEventListener('click', () => {
+    options.forEach(opt => opt.classList.remove('border-[#D35400]', 'bg-[#FF71621F]', 'border-4'));
+    option.classList.add('border-[#D35400]', 'bg-[#FF71621F]', 'border-4');
+  });
+});
+
+
+
+// 4th
 // Delivery date function 
 function formatDate(date) {
     const options = { weekday: 'short', day: 'numeric', month: 'short' };
