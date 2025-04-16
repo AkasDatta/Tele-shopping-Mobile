@@ -146,4 +146,4 @@ if (deliveryEndDate.getDay() === 6 || deliveryEndDate.getDay() === 0) {
 
 document.getElementById('currentDate').innerText = formatDate(today);
 document.getElementById('twoDaysLater').innerText = formatDate(twoDaysLater);
-document.getElementById('deliveryDate').innerText = `${formatDate(deliveryStartDate)} - ${formatDate(deliveryEndDate)}`;
+document.getElementById('deliveryDate').innerText = `${formatDate(deliveryStartDate)}`;
