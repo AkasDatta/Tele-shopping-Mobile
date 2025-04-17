@@ -225,8 +225,8 @@ document.addEventListener("DOMContentLoaded", function () {
 // 7th 
 // Button appare and remove 
 function switchButtons() {
-  document.getElementById('offer-btn').style.display = 'none';
-  document.getElementById('buy-btn').style.display = 'block';
+  document.getElementById("offer-btn").style.display = "none";
+  document.getElementById("buy-btn").style.display = "block";
 }
 
 

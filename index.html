@@ -97,10 +97,14 @@
             <p id="stockPercent">47% du stock</p>
             <p><span id="timer">22</span>:<span id="timer2">60</span> min avant la fin de votre offre</p>
         </div>
-         <!-- This is the first button shown initially -->
-         <button id="offer-btn" onclick="switchButtons()" class="bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full">
-            <b class="text-xl md:text-2xl lg:text-2xl">PROFITER DE MON OFFRE</b>
-            <br>
+        <!-- First button (visible by default) -->
+        <button id="offer-btn" onclick="switchButtons()" class="bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full">
+            <b class="text-xl md:text-2xl lg:text-2xl">PROFITER DE MON OFFRE</b><br>
+            <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
+        </button>
+        <!-- This is the second button (initially hidden) -->
+        <button id="offer-btn" style="display: none;" class="bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full">
+            <b class="text-xl md:text-2xl lg:text-2xl">PROFITER DE MON OFFRE</b><br>
             <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
         </button>
         <div class="px-3 flex gap-2 items-center py-5">
@@ -143,8 +147,8 @@
                 </a>
             </div>
 
-            <!-- Original Button -->
-            <button id="buy-btn" class=" bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full">
+            <!-- Second button (initially hidden) -->
+            <button id="buy-btn" style="display: none;" class="bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full">
                 <b class="text-xl md:text-2xl lg:text-2xl">ACHETER MAINTENANT</b><br>
                 <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
             </button>
