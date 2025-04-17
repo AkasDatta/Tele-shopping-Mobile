@@ -228,3 +228,33 @@ function switchButtons() {
   document.getElementById('offer-btn').style.display = 'none';
   document.getElementById('buy-btn').style.display = 'block';
 }
+
+
+
+
+/////////////////
+ // Select the button inside the #hide-button div
+ const button = document.querySelector("#hide-button button");
+
+ // Function to check the scroll position
+ function checkScroll() {
+     const showButtonDiv = document.getElementById("show-button");
+     const hideButtonDiv = document.getElementById("hide-button");
+ 
+     // Get the positions of the divs
+     const showButtonPosition = showButtonDiv.getBoundingClientRect().top;
+     const hideButtonPosition = hideButtonDiv.getBoundingClientRect().top;
+ 
+     // Check if the page is scrolled past the "show" div and not yet the "hide" div
+     if (showButtonPosition < window.innerHeight && hideButtonPosition > window.innerHeight) {
+         button.style.display = "block"; // Show button
+     } else {
+         button.style.display = "none"; // Hide button
+     }
+ }
+ 
+ // Add scroll event listener
+ window.addEventListener("scroll", checkScroll);
+ 
+ // Call the function once on load to ensure the button is correctly displayed initially
+ checkScroll();

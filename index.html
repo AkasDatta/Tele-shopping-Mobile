@@ -142,13 +142,53 @@
                   </div>
                 </a>
             </div>
-              
-            <!-- This is the second button, hidden initially -->
-            <button id="buy-btn" style="display: none;" class="bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full">
-                <b class="text-xl md:text-2xl lg:text-2xl">ACHETER MAINTENANT</b>
-                <br>
+
+            <!-- Original Button -->
+            <button id="buy-btn" class=" bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full">
+                <b class="text-xl md:text-2xl lg:text-2xl">ACHETER MAINTENANT</b><br>
                 <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
             </button>
+
+
+            <!-- ////////////////////////////// -->
+              
+            <!-- This is the second button, hidden initially -->
+<!-- Original Button -->
+<!-- <button id="buy-btn" class="buy-btn bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full">
+    <b class="text-xl md:text-2xl lg:text-2xl">ACHETER MAINTENANT</b><br>
+    <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
+</button> -->
+
+<!-- Fixed Button at Bottom with Different ID -->
+<!-- <button style="display: none;" class="buy-btn-fixed fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white rounded-2xl px-5 py-2 w-[90%] z-50">
+    <b class="text-xl md:text-2xl lg:text-2xl">ACHETER MAINTENANT</b><br>
+    <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
+</button> -->
+
+
+<!-- <script>
+    const originalBtn = document.getElementsByClassName('buy-btn')[0];
+    const fixedBtn = document.getElementsByClassName('buy-btn-fixed')[0];
+
+    function checkVisibility() {
+        const rect = originalBtn.getBoundingClientRect();
+        const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+        fixedBtn.style.display = isVisible ? 'none' : 'block';
+    }
+
+    fixedBtn.addEventListener('click', () => {
+        originalBtn.click();
+    });
+
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('resize', checkVisibility);
+    document.addEventListener('DOMContentLoaded', checkVisibility);
+</script> -->
+
+<!-- //////////////////////////// -->
+
+
         </div>
 
         <!-- Delivery time -->
@@ -366,8 +406,12 @@
                 </div>
             </div>
         </div>
-        <button class="bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full"><b class="text-xl md:text-2xl lg:text-2xl">PROFITER DE MON OFFRE</b> <br> <p class="text-xs">Livraison offerte aujourd’hui uniquement</p></button>
     </div>
+
+            <!-- Your demo section button -->
+        <div class="bg-white px-4 md:px-12 lg:px-12 xl:px-24 py-6">
+            <button type="button" class="bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full"><b class="text-xl md:text-2xl lg:text-2xl">PROFITER DE MON OFFRE</b> <br> <p class="text-xs">Livraison offerte aujourd’hui uniquement</p></button>
+        </div>
       
     <!-- Footer  -->
     <div class="bg-[#F8ECE0] px-4 md:px-12 lg:px-12 xl:px-24 py-6">
