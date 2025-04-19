@@ -11,3 +11,7 @@
     background-color: #000;
     opacity: 1;
   }
+
+  *{
+    scroll-behavior: smooth;
+  }
