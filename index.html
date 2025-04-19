@@ -148,11 +148,37 @@
             </div>
 
             <!-- Second button (initially hidden) -->
-            <button id="buy-btn" style="display: none;" class="bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full">
+            <button id="buy-btn" style="display: none;" class="original-location bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full">
                 <b class="text-xl md:text-2xl lg:text-2xl">ACHETER MAINTENANT</b><br>
                 <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
             </button>
 
+
+
+           <!-- Fixed Bottom Button -->
+    <button id="bottomButton" class="hidden fixed bottom-4 left-4 right-4 bg-black text-white rounded-2xl px-5 py-2 z-50 max-w-md mx-auto">
+        <b class="text-xl md:text-2xl lg:text-2xl">ACHETER MAINTENANT</b><br>
+        <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
+    </button>
+
+    <script>
+        const bottomButton = document.getElementById('bottomButton');
+        const observerTarget = document.querySelector('button.original-location');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    bottomButton.classList.remove('hidden');
+                } else {
+                    bottomButton.classList.add('hidden');
+                }
+            });
+        });
+
+        if (observerTarget) {
+            observer.observe(observerTarget);
+        }
+    </script>
 
             <!-- ////////////////////////////// -->
               
