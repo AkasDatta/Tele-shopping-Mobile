@@ -1,16 +1,17 @@
-.swiper-pagination-bullet {
-    background-color: #ccc;
-    opacity: 0.5;
-    width: 10px;
-    height: 10px;
-    border-radius: 9999px;
-    margin: 0 4px;
-  }
+.swiper .swiper-pagination-bullet {
+  background-color: #ccc !important;
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  margin: 0 4px;
+}
 
-  .swiper-pagination-bullet-active {
-    background-color: #000;
-    opacity: 1;
-  }
+.swiper .swiper-pagination-bullet-active {
+  background-color: #000 !important;
+  opacity: 1;
+}
+
 
   *{
     scroll-behavior: smooth;
