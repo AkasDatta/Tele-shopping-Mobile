@@ -102,11 +102,6 @@
             <b class="text-xl md:text-2xl lg:text-2xl">PROFITER DE MON OFFRE</b><br>
             <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
         </button>
-        <!-- This is the second button (initially hidden) -->
-        <button id="offer-btn" style="display: none;" class="bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full">
-            <b class="text-xl md:text-2xl lg:text-2xl">PROFITER DE MON OFFRE</b><br>
-            <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
-        </button>
         <div class="px-3 flex gap-2 items-center py-5">
             <img src="./img/star.png" alt="">
             <p class="text-xs md:text-md lg:text-lg"><b>4.9</b> (347 avis clients)</p>
@@ -152,77 +147,10 @@
                 <b class="text-xl md:text-2xl lg:text-2xl">ACHETER MAINTENANT</b><br>
                 <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
             </button>
-
-
-
-           <!-- Fixed Bottom Button -->
-    <button id="bottomButton" class="hidden fixed bottom-4 left-4 right-4 bg-black text-white rounded-2xl px-5 py-2 z-50 max-w-md mx-auto">
-        <b class="text-xl md:text-2xl lg:text-2xl">ACHETER MAINTENANT</b><br>
-        <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
-    </button>
-
-    <script>
-        const bottomButton = document.getElementById('bottomButton');
-        const observerTarget = document.querySelector('button.original-location');
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    bottomButton.classList.remove('hidden');
-                } else {
-                    bottomButton.classList.add('hidden');
-                }
-            });
-        });
-
-        if (observerTarget) {
-            observer.observe(observerTarget);
-        }
-    </script>
-
-            <!-- ////////////////////////////// -->
-              
-            <!-- This is the second button, hidden initially -->
-<!-- Original Button -->
-<!-- <button id="buy-btn" class="buy-btn bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full">
-    <b class="text-xl md:text-2xl lg:text-2xl">ACHETER MAINTENANT</b><br>
-    <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
-</button> -->
-
-<!-- Fixed Button at Bottom with Different ID -->
-<!-- <button style="display: none;" class="buy-btn-fixed fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white rounded-2xl px-5 py-2 w-[90%] z-50">
-    <b class="text-xl md:text-2xl lg:text-2xl">ACHETER MAINTENANT</b><br>
-    <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
-</button> -->
-
-
-<!-- <script>
-    const originalBtn = document.getElementsByClassName('buy-btn')[0];
-    const fixedBtn = document.getElementsByClassName('buy-btn-fixed')[0];
-
-    function checkVisibility() {
-        const rect = originalBtn.getBoundingClientRect();
-        const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
-
-        fixedBtn.style.display = isVisible ? 'none' : 'block';
-    }
-
-    fixedBtn.addEventListener('click', () => {
-        originalBtn.click();
-    });
-
-    window.addEventListener('scroll', checkVisibility);
-    window.addEventListener('resize', checkVisibility);
-    document.addEventListener('DOMContentLoaded', checkVisibility);
-</script> -->
-
-<!-- //////////////////////////// -->
-
-
         </div>
 
         <!-- Delivery time -->
-        <div class="pt-6 px-0 md:px-12 lg:px-12 xl:px-24">
+        <div id="orderProgress" class="pt-6 px-0 md:px-12 lg:px-12 xl:px-24">
               <div class="flex items-center justify-center px-6">
                 <div class="w-12 text-xl h-12 rounded-full bg-black flex items-center justify-center text-white">
                     <i class="fa-regular fa-cart-plus"></i>
@@ -251,6 +179,31 @@
                 </div>
             </div>
         </div>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+              const target = document.querySelector("#orderProgress");
+              const button = document.querySelector("button.fixed");
+          
+              const observer = new IntersectionObserver(
+                ([entry]) => {
+                  if (entry.isIntersecting) {
+                    button.classList.remove("hidden");
+                  } else {
+                    button.classList.add("hidden");
+                  }
+                },
+                {
+                  root: null, // viewport
+                  threshold: 0.3, // adjust as needed
+                }
+              );
+          
+              if (target) {
+                observer.observe(target);
+              }
+            });
+          </script>
+          
     </div>
 
     <!-- Accordion  -->
