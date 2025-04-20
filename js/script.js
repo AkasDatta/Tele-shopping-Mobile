@@ -224,11 +224,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // 7th 
 // Button appare and remove 
-function switchButtons() {
-  document.getElementById("offer-btn").style.display = "none";
-  document.getElementById("buy-btn").style.display = "block";
-}
+// function switchButtons() {
+//   document.getElementById("offer-btn").style.display = "none";
+//   document.getElementById("buy-btn").style.display = "block";
+// }
 
+function switchButtons() {
+  // Show the hidden section
+  const section = document.getElementById("acheter-section");
+  section.style.display = "block";
+
+  // Optionally hide the trigger button after click
+  const offerBtn = document.getElementById("offer-btn");
+  offerBtn.style.display = "none";
+}
 
 
 
