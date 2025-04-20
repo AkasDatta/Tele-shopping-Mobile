@@ -141,14 +141,46 @@
                     <p class="bg-[#00B579] text-xs text-white rounded-md px-1">ÉCONOMISEZ 40€</p>
                   </div>
                 </a>
+                <button class="option block bg-black text-white rounded-2xl mt-3 px-5 py-3 w-full text-center">
+                    <span class="block text-xl md:text-2xl font-semibold">PROFITER DE MON OFFRE</span>
+                    <span class="block text-xs mt-1">Livraison offerte aujourd’hui uniquement</span>
+                  </button>
             </div>
-
-            <!-- Second button (initially hidden) -->
-            <button class="original-location bg-black text-white rounded-2xl mt-3 px-5 py-2 w-full">
-                <b class="text-xl md:text-2xl lg:text-2xl">ACHETER MAINTENANT</b><br>
-                <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
-            </button>
+            <script>
+                let lastClickedLink = null;
+              
+                // Get all anchor tags with class "option"
+                const links = document.querySelectorAll("a.option");
+              
+                links.forEach(link => {
+                  link.addEventListener("click", (e) => {
+                    e.preventDefault(); // prevent immediate navigation
+                    lastClickedLink = link.getAttribute("href");
+                  });
+                });
+              
+                // Get the button
+                const button = document.querySelector("button.option");
+              
+                button.addEventListener("click", () => {
+                  if (lastClickedLink) {
+                    window.location.href = lastClickedLink; // navigate to saved link
+                  } else {
+                    alert("Please select an option first.");
+                  }
+                });
+              </script>
+              
         </div>
+        <!-- Fixed button, hidden by default -->
+        <button
+        id="acheter-btn"
+        style="display: none;"
+        class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-black text-white rounded-2xl px-5 py-2 w-[90%] max-w-md z-50 shadow-lg"
+        >
+        <b class="text-xl md:text-2xl lg:text-2xl">ACHETER MAINTENANT</b><br />
+        <p class="text-xs">Livraison offerte aujourd’hui uniquement</p>
+        </button>
 
         <!-- Delivery time -->
         <div id="orderProgress" class="pt-6 px-0 md:px-12 lg:px-12 xl:px-24">

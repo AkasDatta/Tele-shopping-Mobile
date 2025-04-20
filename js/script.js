@@ -223,12 +223,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // 7th 
-// Button appare and remove 
-// function switchButtons() {
-//   document.getElementById("offer-btn").style.display = "none";
-//   document.getElementById("buy-btn").style.display = "block";
-// }
-
 function switchButtons() {
   // Show the hidden section
   const section = document.getElementById("acheter-section");
@@ -241,29 +235,29 @@ function switchButtons() {
 
 
 
-/////////////////
- // Select the button inside the #hide-button div
- const button = document.querySelector("#hide-button button");
+const optionsContainer = document.getElementById("options-container");
+const acheterBtn = document.getElementById("acheter-btn");
 
- // Function to check the scroll position
- function checkScroll() {
-     const showButtonDiv = document.getElementById("show-button");
-     const hideButtonDiv = document.getElementById("hide-button");
- 
-     // Get the positions of the divs
-     const showButtonPosition = showButtonDiv.getBoundingClientRect().top;
-     const hideButtonPosition = hideButtonDiv.getBoundingClientRect().top;
- 
-     // Check if the page is scrolled past the "show" div and not yet the "hide" div
-     if (showButtonPosition < window.innerHeight && hideButtonPosition > window.innerHeight) {
-         button.style.display = "block"; // Show button
-     } else {
-         button.style.display = "none"; // Hide button
-     }
- }
- 
- // Add scroll event listener
- window.addEventListener("scroll", checkScroll);
- 
- // Call the function once on load to ensure the button is correctly displayed initially
- checkScroll();
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Section is visible — hide fixed button
+        acheterBtn.style.display = "none";
+      } else {
+        // Section is out of view — show fixed button
+        acheterBtn.style.display = "block";
+      }
+    });
+  },
+  {
+    root: null, // viewport
+    threshold: 0, // fire as soon as any part is out of view
+  }
+);
+
+observer.observe(optionsContainer);
+
+
+
+// 8th 
